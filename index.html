@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>București Sparkle - Professional Cleaning Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            width: 56px;
+            height: 56px;
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                min-height: 70vh;
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.25rem;
+            }
+            
+            .mobile-menu {
+                display: none;
+            }
+            
+            .mobile-menu.active {
+                display: block;
+                animation: fadeIn 0.3s ease-in-out;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-broom text-2xl text-blue-600"></i>
+                    <span class="font-bold text-lg md:text-xl text-blue-600">București Sparkle</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-white pb-4 px-4 shadow-md">
+            <a href="#services" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-blue-600 transition">Services</a>
+            <a href="#about" class="block py-3 border-b border-gray-100 text-gray-700 hover:text-blue-600 transition">About</a>
+            <a href="#contact" class="block py-3 text-gray-700 hover:text-blue-600 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-white">
+        <div class="max-w-6xl mx-auto px-4 text-center w-full">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">Professional Cleaning Services in Bucharest</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8">Making your home shine with attention to detail and care</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full text-base md:text-lg transition duration-300 inline-block">
+                    Book Now
+                </a>
+                <a href="tel:+40721XXXXXX" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-6 rounded-full text-base md:text-lg transition duration-300 inline-block">
+                    <i class="fas fa-phone mr-2"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-12 md:py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Our Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-40 sm:h-48 bg-gray-100 flex items-center justify-center">
+                        <i class="fas fa-home text-5xl md:text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-5 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-gray-800">Regular Home Cleaning</h3>
+                        <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Thorough cleaning of your entire home including dusting, vacuuming, mopping, and sanitizing all surfaces.</p>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-sm md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Living room & bedrooms</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Kitchen deep clean</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Bathroom sanitization</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-40 sm:h-48 bg-gray-100 flex items-center justify-center">
+                        <i class="fas fa-bath text-5xl md:text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-5 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-gray-800">Deep Cleaning</h3>
+                        <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Intensive cleaning service that reaches all the often-neglected areas of your home.</p>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-sm md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Inside appliances</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Baseboards & window sills</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Behind furniture</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-40 sm:h-48 bg-gray-100 flex items-center justify-center">
+                        <i class="fas fa-calendar-alt text-5xl md:text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-5 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold mb-2 md:mb-3 text-gray-800">Move-In/Move-Out Cleaning</h3>
+                        <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Comprehensive cleaning service perfect for preparing a home for new residents or leaving a rental property.</p>
+                        <ul class="text-gray-600 space-y-1 md:space-y-2 text-sm md:text-base">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Complete interior cleaning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Cabinets inside and out</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Spotless bathrooms</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 md:py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cleaning professional" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-gray-800">About București Sparkle</h2>
+                    <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Hi, I'm Andrei, the owner and sole operator of București Sparkle. After working for several cleaning companies in Bucharest, I decided to start my own business to provide personalized, high-quality cleaning services to my clients.</p>
+                    <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">What sets me apart is my attention to detail and commitment to using eco-friendly cleaning products whenever possible. I take pride in my work and treat every home as if it were my own.</p>
+                    <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">I serve all areas of Bucharest and am available on weekends from 9 AM to 5 PM to accommodate busy schedules.</p>
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-3 md:p-4">
+                        <p class="text-blue-800 font-medium text-sm md:text-base"><i class="fas fa-clock text-blue-600 mr-2"></i> Working Hours: Saturdays & Sundays, 9:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 md:py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Get in Touch</h2>
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-1/2 mb-8 lg:mb-0">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm md:text-base">Service Area</h4>
+                                <p class="text-gray-600 text-sm md:text-base">Bucharest and surrounding areas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm md:text-base">Phone</h4>
+                                <p class="text-gray-600 text-sm md:text-base">+40 721 XXX XXX</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm md:text-base">Email</h4>
+                                <p class="text-gray-600 text-sm md:text-base">contact@sparklecleaners.ro</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm md:text-base">Working Hours</h4>
+                                <p class="text-gray-600 text-sm md:text-base">Weekends: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800">Service Area Map</h3>
+                        <div class="bg-gray-200 rounded-lg overflow-hidden h-48 md:h-64 flex items-center justify-center">
+                            <i class="fas fa-map-marked-alt text-4xl text-blue-600"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm mt-2">Serving all neighborhoods in Bucharest</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 bg-white p-5 md:p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Book a Service</h3>
+                    <form id="contactForm" class="space-y-3 md:space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-1 text-sm md:text-base">Full Name</label>
+                            <input type="text" id="name" class="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm md:text-base">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-1 text-sm md:text-base">Email</label>
+                            <input type="email" id="email" class="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm md:text-base">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 mb-1 text-sm md:text-base">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm md:text-base">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-gray-700 mb-1 text-sm md:text-base">Service Needed</label>
+                            <select id="service" class="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm md:text-base">
+                                <option value="">Select a service</option>
+                                <option value="regular">Regular Home Cleaning</option>
+                                <option value="deep">Deep Cleaning</option>
+                                <option value="move">Move-In/Move-Out Cleaning</option>
+                                <option value="custom">Custom Service</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="date" class="block text-gray-700 mb-1 text-sm md:text-base">Preferred Date</label>
+                            <input type="date" id="date" class="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm md:text-base">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-1 text-sm md:text-base">Additional Details</label>
+                            <textarea id="message" rows="3" class="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm md:text-base"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 md:py-3 px-4 md:px-6 rounded-md transition duration-300 w-full text-sm md:text-base">
+                            Send Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/40721XXXXXX" class="floating-button bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg transition duration-300">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start space-x-2">
+                        <i class="fas fa-broom text-2xl text-blue-400"></i>
+                        <span class="font-bold text-xl">București Sparkle</span>
+                    </div>
+                    <p class="text-gray-400 mt-2 text-sm md:text-base">Professional cleaning services in Bucharest</p>
+                </div>
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f text-lg md:text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-lg md:text-xl"></i>
+                    </a>
+                    <a href="https://wa.me/40721XXXXXX" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-whatsapp text-lg md:text-xl"></i>
+                    </a>
+                </div>
+                <div class="text-center md:text-left">
+                    <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full text-sm md:text-base transition duration-300">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400 text-sm md:text-base">
+                <p>&copy; 2023 București Sparkle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.mobile-menu').classList.add('hidden');
+                document.querySelector('.mobile-menu').classList.remove('active');
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send this data to your server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! Your ${service} request for ${date} has been received. We'll contact you soon at ${email} or ${phone}.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Set minimum date for booking to tomorrow
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            const dd = String(tomorrow.getDate()).padStart(2, '0');
+            const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+            const yyyy = tomorrow.getFullYear();
+            
+            const minDate = yyyy + '-' + mm + '-' + dd;
+            document.getElementById('date').min = minDate;
+        });
+    </script>
+</body>
+</html>
